@@ -57,7 +57,7 @@ function  AdminProducts() {
         }
     },[showError])
     useEffect(()=>{
-        (async ()=>{getProducts()})();
+        (async ()=>{ await getProducts()})();
     },[])
 
     const openModal = (type,product)=>{
