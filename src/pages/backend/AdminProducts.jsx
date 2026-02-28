@@ -80,8 +80,7 @@ function  AdminProducts() {
         modalInstance.current.hide();
     }
 
-    const handlePageChange = (e,page) =>{
-        e.preventDefault();
+    const handlePageChange = (page) =>{
         getProducts(page);
     }
 

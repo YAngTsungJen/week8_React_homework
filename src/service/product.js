@@ -3,7 +3,7 @@ import {adminApi, api,API_PATH} from './api';
 // 前台
 export const getProductApi = (page = 1,category) => {
     const params = {page};
-    if(category &category !== 'all'){
+    if(category && category !== 'all'){
         params.category = category;
     }
     return api.get(`/api/${API_PATH}/products`,{params});

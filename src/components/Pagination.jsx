@@ -2,7 +2,7 @@ function Pagination({pages,handlePageChange}){
     return (<>
         <nav>
             <ul className="pagination">
-                <li className={`page-item ${!pages.has_pre && 'disabled'}`}>
+                <li className={`page-item ${!pages.has_pre ? 'disabled':''}`}>
                     <a onClick={(e)=> {
                         e.preventDefault();
                         handlePageChange(pages.current_page-1)}}
@@ -12,18 +12,19 @@ function Pagination({pages,handlePageChange}){
                 </li>
                 {
                 Array.from({length: pages.total_pages}).map((_,index)=>{
+                    const pageNumber = index+ 1
                     return (
-                    <li key={index} className={`page-item ${pages.current_page === index+1 && 'active'}`}>
+                    <li key={pageNumber} className={`page-item ${pages.current_page === pageNumber ? 'active': ''}`}>
                         <a onClick={(e)=> {
                             e.preventDefault();
-                            handlePageChange(index+1)}} className="page-link" href="#">
-                        {index+1}
+                            handlePageChange(pageNumber)}} className="page-link" href="#">
+                        {pageNumber}
                         </a>
                     </li>
                     )
                 })
                 }
-                <li className={`page-item ${!pages.has_next && 'disabled'}`}>
+                <li className={`page-item ${!pages.has_next ? 'disabled': ''}`}>
                     <a onClick={(e)=> {
                         e.preventDefault();
                         handlePageChange(pages.current_page+1)}} className="page-link" href="#">

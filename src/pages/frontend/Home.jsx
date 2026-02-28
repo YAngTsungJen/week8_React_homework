@@ -59,9 +59,9 @@ function Home(){
                                                 <img src={product.imageUrl} className="card-img-top rounded-0 object-fit-cover h-100 w-100 product-img" alt={product.title}
                                                 />
                                             </div>
-                                            <div className="p-3">
+                                            <div className="p-3 d-flex flex-column" style={{ minHeight: '120px' }}>
                                                 <h5 className="card-title mt-1">{product.title}<span className="card-subtitle mb-2 text-muted">   {product.category}</span></h5>
-                                                <p className="card-text fw-bold text-muted text-end">
+                                                <p className="card-text fw-bold text-muted text-end mt-auto mb-0">
                                                     {thousandsStamp(product.price)} 元
                                                 </p>
                                             </div>

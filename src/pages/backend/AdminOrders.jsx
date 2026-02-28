@@ -30,9 +30,6 @@ function AdminOrders() {
                 modalElement.removeEventListener("hide.bs.modal", handleHide);
             };
         }, []);
-    useEffect(() => {
-        modalInstance.current = new Modal(orderModalRef.current);
-    }, []);
 
     const getOrders = async (page = 1) => {
         setIsPageLoading(true);
@@ -51,8 +48,7 @@ function AdminOrders() {
     useEffect(() => {
         getOrders();
     }, []);
-    const handlePageChange = (e,page) => {
-        e.preventDefault();
+    const handlePageChange = (page) => {
         getOrders(page);
     }
     const openModal = (order) => {
@@ -178,7 +174,7 @@ function AdminOrders() {
             </div>
             {orders.length > 0 && (
                 <div className="d-flex justify-content-center">
-                    <Pagination pages={pages} handlePageChange={(e, page) => handlePageChange(e, page)} />
+                    <Pagination pages={pages} handlePageChange={handlePageChange} />
                 </div>
             )}
 
