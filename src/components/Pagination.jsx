@@ -3,33 +3,26 @@ function Pagination({pages,handlePageChange}){
         <nav>
             <ul className="pagination">
                 <li className={`page-item ${!pages.has_pre ? 'disabled':''}`}>
-                    <a onClick={(e)=> {
-                        e.preventDefault();
-                        handlePageChange(pages.current_page-1)}}
-                        className="page-link" href="#">
+                    <button onClick={() => handlePageChange(pages.current_page-1)} className="page-link" type="button">
                         上一頁
-                    </a>
+                    </button>
                 </li>
                 {
                 Array.from({length: pages.total_pages}).map((_,index)=>{
                     const pageNumber = index+ 1
                     return (
                     <li key={pageNumber} className={`page-item ${pages.current_page === pageNumber ? 'active': ''}`}>
-                        <a onClick={(e)=> {
-                            e.preventDefault();
-                            handlePageChange(pageNumber)}} className="page-link" href="#">
+                        <button onClick={() => handlePageChange(pageNumber)} className="page-link" type="button">
                         {pageNumber}
-                        </a>
+                        </button>
                     </li>
                     )
                 })
                 }
                 <li className={`page-item ${!pages.has_next ? 'disabled': ''}`}>
-                    <a onClick={(e)=> {
-                        e.preventDefault();
-                        handlePageChange(pages.current_page+1)}} className="page-link" href="#">
+                    <button onClick={() => handlePageChange(pages.current_page+1)} className="page-link" type="button">
                         下一頁
-                    </a>
+                    </button>
                 </li>
             </ul>
         </nav>
