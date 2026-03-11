@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getAllProductApi, getProductApi } from "../service/product";
+import { getAllProductApi, getProductApi } from "../service/productApi";
 export const productSlice = createSlice({
     name: 'product',
     initialState: {
@@ -32,8 +32,7 @@ export const createAsyncGetProduct = createAsyncThunk(
         try {
             const res = await getProductApi(page,category);
             dispatch(setProductData(res.data))
-        } catch (error) {
-            console.log(error);
+            return res.data;
         }finally{
             dispatch(setLoading(false));
         }
@@ -50,8 +49,7 @@ export const createAsyncGetAllProducts = createAsyncThunk(
                 ...new Set(res.data.products.map(product => product.category))
             ];
             dispatch(setCategories(result))
-        } catch (error) {
-            console.log(error);
+            return res.data;
         }finally{
             dispatch(setLoading(false));
         }

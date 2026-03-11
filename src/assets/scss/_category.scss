@@ -1,40 +1,39 @@
 .category-scroll-container::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .category-scroll-container {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .category-pill-btn {
-    border: none !important;
-    background-color: transparent !important;
-    color: #b08968 !important;
-    font-weight: 500;
-    padding: 10px 20px !important;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s ease;
+  border: none !important;
+  background-color: transparent !important;
+  color: #b08968 !important;
+  font-weight: 500;
+  padding: 10px 20px !important;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .category-pill-btn.active {
-    background-color: #f8ede3 !important; 
-    border-radius: 12px;
-    color: #8a5a44 !important;
-    font-weight: bold;
+  background-color: #f8ede3 !important;
+  border-radius: 12px;
+  color: #8a5a44 !important;
+  font-weight: bold;
 }
 
 .pill-icon {
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
 
-
 .breadcrumb {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .mt-auto {
-    margin-top: auto !important;
+  margin-top: auto !important;
 }
