@@ -19,6 +19,11 @@ export const cartSlice = createSlice({
       state.total = action.payload.total;
       state.final_total = action.payload.final_total;
     },
+    clearCart(state){
+      state.carts = [];
+      state.total = 0;
+      state.final_total = 0;
+    }
   },
 });
 export const createAsyncGetCart = createAsyncThunk(
@@ -67,5 +72,5 @@ export const createAsyncDeleteAllCart = createAsyncThunk(
     return res.data;
   },
 );
-export const { updatedCart } = cartSlice.actions;
+export const { updatedCart,clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -1,0 +1,16 @@
+// 定義斷點數值
+$breakpoint-lg: 991.98px;
+$breakpoint-md: 767.98px;
+
+// 定義 Mixin
+@mixin pad {
+  @media (max-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}

@@ -9,11 +9,10 @@
   font-size: 14px;
   background-color: #f8f9fa;
   color: #6c757d;
-}
-
-.step-circle.active {
-  background-color: #2d6a4f;
-  color: white;
+  &.active {
+    background-color: #2d6a4f;
+    color: white;
+  }
 }
 
 .form-control {

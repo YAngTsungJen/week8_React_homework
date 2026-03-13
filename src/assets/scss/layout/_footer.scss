@@ -1,0 +1,15 @@
+.footer {
+  h5 {
+    font-size: 1.1rem;
+    color: #f8f9fa;
+  }
+  a {
+    transition: color 0.3s ease;
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      color: #d4a373 !important;
+      opacity: 1;
+    }
+  }
+}

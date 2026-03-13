@@ -1,0 +1,29 @@
+$color-primary: #b08968;
+$color-active-bg: #f8ede3;
+$color-active-text: #8a5a44;
+$transition-default: all 0.3s ease;
+
+.category-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.category-pill-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: $color-primary;
+  font-weight: 500;
+  transition: $transition-default;
+  &.active {
+    background-color: #f8ede3 !important;
+    border-radius: 12px;
+    color: #8a5a44 !important;
+    font-weight: bold;
+  }
+}

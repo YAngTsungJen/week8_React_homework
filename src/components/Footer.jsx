@@ -2,14 +2,14 @@ import { Link } from 'react-router';
 function Footer() {
   return (
     <>
-      <footer className="bg-dark text-white py-5">
+      <footer className="footer bg-dark text-white py-5">
         <div className="container">
-          <div className="row gy-4">
+          <div className="row">
             <div className="col-md-4 text-start">
               <h3 className="fw-bold mb-3" style={{ letterSpacing: '2px' }}>
                 夠可愛毛小孩
               </h3>
-              <p className="opacity-75 lh-lg">
+              <p className="opacity-75">
                 為忙碌的生活點綴純粹的愛，
                 <br />
                 讓毛孩成為家中最溫暖的陪伴，構築你理想中的幸福風景。

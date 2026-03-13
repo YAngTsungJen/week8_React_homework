@@ -12,7 +12,7 @@ function Orders() {
             <FontAwesomeIcon icon={faCheck} />
           </div>
 
-          <h1>付款完成</h1>
+          <h1 className='h1'>付款完成</h1>
 
           <p className="order-number">
             您的訂單編號：<strong>-Om8q5u08EYOu4eavlX8</strong>

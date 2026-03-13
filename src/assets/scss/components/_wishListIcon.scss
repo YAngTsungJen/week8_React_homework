@@ -10,19 +10,16 @@
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 2;
-}
-
-.wishlist-btn:hover {
-  transform: scale(1.1);
-  background: white;
-}
-
-.wishlist-btn .fa-heart {
-  font-size: 1.2rem;
-  color: #ccc;
-  transition: color 0.3s;
-}
-
-.wishlist-btn .fa-heart.active {
-  color: #ff4d4f;
+  &:hover {
+    transform: scale(1.1);
+    background: white;
+  }
+  .fa-heart {
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: color 0.3s;
+    &.active {
+      color: #ff4d4f;
+    }
+  }
 }

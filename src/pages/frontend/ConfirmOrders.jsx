@@ -4,6 +4,8 @@ import StepCircle from '../../components/StepCircle';
 import { thousandsStamp } from '../../utils/thousandsStamp';
 import useMessage from '../../hooks/useMessage';
 import { getOrder, payMoney } from '../../service/orderApi';
+import { clearCart } from '../../slices/cartSlice';
+import { useDispatch } from 'react-redux';
 
 function Orders() {
   const { orderId } = useParams();
@@ -14,6 +16,7 @@ function Orders() {
   const [isLoading, setIsLoading] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('');
   const [touch, setTouch] = useState(false);
+  const dispatch = useDispatch();
   const PAYMENT_METHODS = {
     credit_card: '信用卡',
     line_pay: 'LINE Pay',
@@ -33,6 +36,7 @@ function Orders() {
         setIsPaid(true);
         localStorage.setItem(`payment_${orderId}`, paymentMethod);
         showSuccess('已付款成功');
+        dispatch(clearCart());
       }
     } catch {
       showError('付款失敗');
@@ -130,6 +134,7 @@ function Orders() {
                 <div className="payment-options d-flex flex-column gap-2 mt-3">
                   {Object.entries(PAYMENT_METHODS).map(([key, value]) => (
                     <label
+                      key={key}
                       className={`payment-label p-3 border rounded d-flex align-items-center cursor-pointer ${paymentMethod === key ? 'border-primary bg-light shadow-sm' : ''}`}
                       style={{ cursor: 'pointer' }}
                     >

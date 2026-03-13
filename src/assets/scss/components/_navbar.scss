@@ -1,0 +1,76 @@
+@import '../util/utils';
+$wood-primary: #e0bd95;
+$wood-text: rgba(131, 44, 44, 0.85);
+$wood-hover: #ffffff;
+$transition-base: all 0.3s ease;
+
+.navbar-wood {
+  background-color: $wood-primary;
+  padding: 14px 0;
+  transition: $transition-base;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $wood-text;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: $wood-hover;
+    }
+    &.linkisActive {
+      color: $wood-hover;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    }
+  }
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    background-image: url('../../logo/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .nav-link {
+    position: relative;
+    color: $wood-text;
+    margin-left: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.25s ease;
+    &:hover,
+    &.linkisActive {
+      color: $wood-hover;
+    }
+    @include pad {
+      padding: 15px !important;
+      text-align: center;
+      display: block;
+      width: 100%;
+    }
+  }
+  .navbar-collapse {
+    @include pad {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 10px;
+      margin-top: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+  }
+  .nav-item {
+    @include pad {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
