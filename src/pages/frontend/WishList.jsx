@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { getAllProductApi } from '../../service/productApi'; // 引入 API
+import { getAllProductApi } from '../../service/productApi';
 import { thousandsStamp } from '../../utils/thousandsStamp';
 import useMessage from '../../hooks/useMessage';
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,20 +31,24 @@ function Wishlist() {
     localStorage.setItem('wishList', JSON.stringify(newWishList));
     setWithList(newWishList);
     if (!newWishList[product_id]) {
-      setProducts(products.filter(p => p.id !== product_id));
+      setProducts(products.filter((p) => p.id !== product_id));
     }
   };
 
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const wishListObj = JSON.parse(localStorage.getItem('wishList') || '{}');
-        const wishIds = Object.keys(wishListObj).filter(id => wishListObj[id]);
+        const wishListObj = JSON.parse(
+          localStorage.getItem('wishList') || '{}',
+        );
+        const wishIds = Object.keys(wishListObj).filter(
+          (id) => wishListObj[id],
+        );
 
         if (wishIds.length > 0) {
           const res = await getAllProductApi();
-          const filteredProducts = res.data.products.filter(product => 
-            wishIds.includes(product.id.toString())
+          const filteredProducts = res.data.products.filter((product) =>
+            wishIds.includes(product.id.toString()),
           );
           setProducts(filteredProducts);
         }
@@ -108,10 +112,7 @@ function Wishlist() {
             );
             const cartQty = cartItem ? cartItem.qty : 0;
             return (
-              <div
-                className="col-12 col-md-6 col-lg-4 mb-4"
-                key={product.id}
-              >
+              <div className="col-12 col-md-6 col-lg-4 mb-4" key={product.id}>
                 <div className="card h-100 border-0 shadow-sm product-card">
                   <div className="ratio ratio-4x3 overflow-hidden">
                     <img
