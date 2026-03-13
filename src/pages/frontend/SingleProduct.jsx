@@ -46,7 +46,7 @@ function SingleProduct() {
     } finally {
       setIsPageLoading(false);
     }
-  }, [id,showError]);
+  }, [id, showError]);
   useEffect(() => {
     dispatch(createAsyncGetCart());
     getSingleProduct();
@@ -218,7 +218,7 @@ function SingleProduct() {
                   </button>
                   <input
                     className="form-control text-center border-dark px-1"
-                    style={{minWidth: '50px'}}
+                    style={{ minWidth: '50px' }}
                     type="text"
                     min="1"
                     max="10"

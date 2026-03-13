@@ -30,19 +30,25 @@ function Footer() {
             </div>
             <div className="col-md-4 text-start">
               <h5 className="fw-bold mb-4">聯絡萌寵管家</h5>
-            <div className="d-flex align-items-center mb-2">
-              <span className="opacity-50 me-2">客服專線：</span>
-              <a href="tel:02-1234-5678" className="text-decoration-none text-white">
-                02-1234-5678
-              </a>
-            </div>
+              <div className="d-flex align-items-center mb-2">
+                <span className="opacity-50 me-2">客服專線：</span>
+                <a
+                  href="tel:02-1234-5678"
+                  className="text-decoration-none text-white"
+                >
+                  02-1234-5678
+                </a>
+              </div>
               <div className="d-flex align-items-center mb-2">
                 <span className="opacity-50 me-2">服務時間：</span>
                 <span className="text-white">Mon - Fri 09:00 - 18:00</span>
               </div>
               <div className="d-flex align-items-center">
                 <span className="opacity-50 me-2">官方信箱：</span>
-                <a href="mailto:service@socute-pets.com" className="text-decoration-none text-white">
+                <a
+                  href="mailto:service@socute-pets.com"
+                  className="text-decoration-none text-white"
+                >
                   service@socute-pets.com
                 </a>
               </div>

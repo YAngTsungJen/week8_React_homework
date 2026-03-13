@@ -41,7 +41,10 @@ function Login() {
   return (
     <>
       <div className="container-fluid bg-light min-vh-100 d-flex align-items-center justify-content-center">
-        <div className="p-4 p-md-5 shadow-sm bg-white rounded-4" style={{ maxWidth: '450px', width: '100%' }}>
+        <div
+          className="p-4 p-md-5 shadow-sm bg-white rounded-4"
+          style={{ maxWidth: '450px', width: '100%' }}
+        >
           <div className="text-center mb-4">
             <h1 className="h3 fw-bold text-dark">管理者登入</h1>
           </div>
@@ -49,7 +52,7 @@ function Login() {
             <div className="form-floating mb-3">
               <input
                 type="email"
-                className='form-control'
+                className="form-control"
                 id="username"
                 placeholder="name@example.com"
                 autoFocus
@@ -63,7 +66,7 @@ function Login() {
             <div className="form-floating mb-4">
               <input
                 type="password"
-                className='form-control'
+                className="form-control"
                 id="password"
                 placeholder="password"
                 {...register('password', {
@@ -90,9 +93,12 @@ function Login() {
                     className="spinner-border spinner-border-sm me-2"
                     role="status"
                     aria-hidden="true"
-                  ></span>驗證中...
-                </>): ('立即登入')
-              }
+                  ></span>
+                  驗證中...
+                </>
+              ) : (
+                '立即登入'
+              )}
             </button>
           </form>
           <div className="mt-5 text-center text-muted small">

@@ -6,7 +6,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAsyncGetCart } from '../slices/cartSlice';
 function Navbar() {
-  const {isLoggedIn,isInBackend} = useSelector((state)=> state.auth);
+  const { isLoggedIn, isInBackend } = useSelector((state) => state.auth);
   const carts = useSelector((state) => state.cart.carts);
   const dispatch = useDispatch();
   const toggleRef = useRef(null);
@@ -95,15 +95,23 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                {
-                  !isLoggedIn ? (
-                  <NavLink className={navLinkClass} onClick={closeNavbar} to="/login">
+                {!isLoggedIn ? (
+                  <NavLink
+                    className={navLinkClass}
+                    onClick={closeNavbar}
+                    to="/login"
+                  >
                     後台管理
                   </NavLink>
-                  ) : (<NavLink className={navLinkClass} onClick={closeNavbar} to={isInBackend ? '/' : '/admin/adminProducts'}>
-                    {isInBackend ? "回到前台" : "返回後台"}
-                  </NavLink>)
-                }
+                ) : (
+                  <NavLink
+                    className={navLinkClass}
+                    onClick={closeNavbar}
+                    to={isInBackend ? '/' : '/admin/adminProducts'}
+                  >
+                    {isInBackend ? '回到前台' : '返回後台'}
+                  </NavLink>
+                )}
               </li>
             </ul>
           </div>

@@ -10,18 +10,13 @@ function AdminLayout() {
   const navigate = useNavigate();
   const bsCollapse = useRef(null);
   const toggleRef = useRef(null);
-  // 登出函式
   const handleLogout = () => {
-    // 1. 清除 Cookie (將過期時間設為過去即可，路徑必須一致)
     // eslint-disable-next-line react-hooks/immutability
-    document.cookie = "onion=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    
-    // 2. 更新 Redux 狀態
+    document.cookie = 'onion=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     dispatch(setLoginStatus(false));
-    
-    // 3. 關閉手機版選單並導航回首頁
+
     closeNavbar();
-    navigate('/'); 
+    navigate('/');
   };
   const brandClass = ({ isActive }) => {
     return isActive ? 'navbar-brand linkisActive' : 'navbar-brand';
@@ -36,10 +31,8 @@ function AdminLayout() {
       bsCollapse.current.hide();
     }
   };
-useEffect(() => {
+  useEffect(() => {
     dispatch(setIsInBackend(true));
-    // 組件卸載時（離開後台）可以選用切回 false，
-    // 但建議在 FrontLayout 統一處理更保險
   }, [dispatch]);
   useEffect(() => {
     if (toggleRef.current) {
@@ -72,7 +65,11 @@ useEffect(() => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent" ref={toggleRef}>
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent"
+            ref={toggleRef}
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
               <li className="nav-item">
                 <NavLink
@@ -97,10 +94,9 @@ useEffect(() => {
                   回到前台
                 </NavLink>
               </li>
-{/* 新增登出按鈕 */}
               <li className="nav-item">
-                <button 
-                  className="btn btn-outline-danger ms-lg-3 mt-2 mt-lg-0" 
+                <button
+                  className="btn btn-outline-danger ms-lg-3 mt-2 mt-lg-0"
                   onClick={handleLogout}
                 >
                   登出

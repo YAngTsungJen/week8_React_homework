@@ -4,23 +4,29 @@ import { createAsyncMessage } from '../slices/ToastSlice';
 
 function useMessage() {
   const dispatch = useDispatch();
-  const showSuccess = useCallback((message) => {
-    dispatch(
-      createAsyncMessage({
-        success: true,
-        message,
-      }),
-    );
-  }, [dispatch]);
+  const showSuccess = useCallback(
+    (message) => {
+      dispatch(
+        createAsyncMessage({
+          success: true,
+          message,
+        }),
+      );
+    },
+    [dispatch],
+  );
 
-  const showError = useCallback((message) => {
-    dispatch(
-      createAsyncMessage({
-        success: false,
-        message,
-      }),
-    );
-  }, [dispatch]);
+  const showError = useCallback(
+    (message) => {
+      dispatch(
+        createAsyncMessage({
+          success: false,
+          message,
+        }),
+      );
+    },
+    [dispatch],
+  );
 
   return {
     showError,

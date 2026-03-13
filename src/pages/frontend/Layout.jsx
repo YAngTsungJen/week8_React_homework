@@ -8,7 +8,7 @@ import { setIsInBackend } from '../../slices/authSlice';
 function Layout() {
   const dispatch = useDispatch();
   const location = useLocation();
-useEffect(() => {
+  useEffect(() => {
     // 只要是在這個佈局下，都視為不在後台
     dispatch(setIsInBackend(false));
   }, [dispatch, location.pathname]);

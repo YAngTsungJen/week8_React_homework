@@ -53,7 +53,7 @@ const routes = [
       {
         path: 'wishlist',
         element: <WishList />,
-      }
+      },
     ],
   },
   {
