@@ -2,7 +2,7 @@ $primary-dark-blue: #2c5282;
 .main-content {
   display: flex;
   gap: 20px;
-  @include mobile {
+  @include media-breakpoint-down(md) {
     flex-direction: column;
   }
 }

@@ -46,7 +46,7 @@ $transition-base: all 0.3s ease;
     &.linkisActive {
       color: $wood-hover;
     }
-    @include pad {
+    @include media-breakpoint-down(lg) {
       padding: 15px !important;
       text-align: center;
       display: block;
@@ -54,7 +54,7 @@ $transition-base: all 0.3s ease;
     }
   }
   .navbar-collapse {
-    @include pad {
+    @include media-breakpoint-down(lg) {
       background-color: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -65,7 +65,7 @@ $transition-base: all 0.3s ease;
     }
   }
   .nav-item {
-    @include pad {
+    @include media-breakpoint-down(lg) {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       &:last-child {
         border-bottom: none;

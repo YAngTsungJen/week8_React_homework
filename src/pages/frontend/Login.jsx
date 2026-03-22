@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { emailValidition } from '../../utils/validition';
 import { useNavigate } from 'react-router';
@@ -38,6 +38,15 @@ function Login() {
       setIsLoading(false);
     }
   };
+  useEffect(() => {
+    const token = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('onion='))
+      ?.split('=')[1];
+    if (token) {
+      navigate('/admin/adminProducts'); // 已登入 → 直接導後台
+    }
+  }, [navigate]);
   return (
     <>
       <div className="container-fluid bg-light min-vh-100 d-flex align-items-center justify-content-center">
