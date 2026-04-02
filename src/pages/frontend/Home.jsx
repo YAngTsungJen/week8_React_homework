@@ -135,6 +135,7 @@ function Home() {
                     className="form-control p-3 h-100"
                     placeholder="Your email address"
                     aria-label="Your email address"
+                    required
                   />
                   <button type="submit" className="btn btn-primary px-5">
                     立即訂閱
